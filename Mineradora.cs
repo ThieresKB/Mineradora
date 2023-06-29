@@ -82,7 +82,7 @@ namespace ProvaMineradora
         {
             var caminhao = new Caminhao();
             var motorista = new Motorista();
-            Console.Write("Qual o nuero da placa? ");
+            Console.Write("Qual o numero da placa? ");
             caminhao.Placa = Console.ReadLine();
             Console.Write("Qual o modelo do caminhão? ");
             caminhao.Modelo = Console.ReadLine();
@@ -139,14 +139,15 @@ namespace ProvaMineradora
             Console.WriteLine("======== Lista de Minas ==========");
             if (_mina.Count > 0)
             {
-                for (int x = 0; x <= _mina.Count; x++)
+                for (int x = 0; x < _mina.Count; x++)
                 {
-                    Console.WriteLine($"| {index++} | {_mina[x].Area} m² | {_mina[x].Descricao} |");
+                    Console.WriteLine($"| nº {index++} | Area: {_mina[x].Area} m² | Descrição: {_mina[x].Descricao} |");
 
-                    for (int y = 0; y <= _caminhoesEmotoristas.Count; y++)
+                    for (int y = 0; y < _mina[x].Caminhoes.Count; y++)
                     {
-                        Console.WriteLine($"|   | {_mina[x].Caminhoes[y].Placa} m² | {_mina[x].Caminhoes[y].Modelo} | {_mina[x].Caminhoes[y].Motorista.Nome} | {_mina[x].Caminhoes[y].Motorista.CPF} |");
+                        Console.WriteLine($"|      | Placa: {_mina[x].Caminhoes[y].Placa} m² | Modelo: {_mina[x].Caminhoes[y].Modelo} | Motorista: {_mina[x].Caminhoes[y].Motorista.Nome} | CPF: {_mina[x].Caminhoes[y].Motorista.CPF} |");
                     }
+                    Console.WriteLine();
                 }
             }
             else

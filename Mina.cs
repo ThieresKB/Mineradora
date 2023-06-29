@@ -12,6 +12,7 @@ namespace ProvaMineradora
         {
             Area = area;
             Descricao = descricao;
+            Caminhoes = new List<Caminhao>();
         }
         public decimal? Area { get; set; }
         public string? Descricao { get; set; }
